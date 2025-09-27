@@ -7,6 +7,10 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'QuickCart - Your Online Store',
   description: 'Shop the latest products with the best prices',
+    icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico'
+  },
 };
 
 export default function RootLayout({ children }) {
