@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #0f0f10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@layer base {
+  :root {
+        /* QuickCart Modern Theme - Light Mode */
+        --background: 0 0% 99%;
+        --foreground: 230 15% 15%;
+        --card: 0 0% 100%;
+        --card-foreground: 230 15% 15%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 230 15% 15%;
+        
+        /* Primary: Vibrant Purple-Blue Gradient */
+        --primary: 262 83% 58%;
+        --primary-foreground: 0 0% 100%;
+        
+        /* Secondary: Soft Lavender */
+        --secondary: 252 30% 95%;
+        --secondary-foreground: 262 25% 25%;
+        
+        /* Muted: Light Gray with Purple Tint */
+        --muted: 250 15% 96%;
+        --muted-foreground: 250 8% 45%;
+        
+        /* Accent: Electric Cyan */
+        --accent: 189 94% 55%;
+        --accent-foreground: 0 0% 100%;
+        
+        --destructive: 348 83% 47%;
+        --destructive-foreground: 0 0% 100%;
+        
+        /* Borders: Subtle Purple Tint */
+        --border: 252 20% 90%;
+        --input: 252 20% 92%;
+        --ring: 262 83% 58%;
+        
+        /* Charts: Modern Color Palette */
+        --chart-1: 262 83% 58%;
+        --chart-2: 189 94% 55%;
+        --chart-3: 330 81% 60%;
+        --chart-4: 43 96% 56%;
+        --chart-5: 142 71% 45%;
+        
+        --radius: 0.75rem;
+        
+        /* Sidebar */
+        --sidebar-background: 252 30% 98%;
+        --sidebar-foreground: 230 15% 25%;
+        --sidebar-primary: 262 83% 58%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 252 30% 95%;
+        --sidebar-accent-foreground: 262 25% 25%;
+        --sidebar-border: 252 20% 88%;
+        --sidebar-ring: 262 83% 58%;
+    }
+    
+  .dark {
+        /* QuickCart Modern Theme - Dark Mode */
+        --background: 230 25% 8%;
+        --foreground: 252 30% 95%;
+        --card: 230 25% 10%;
+        --card-foreground: 252 30% 95%;
+        --popover: 230 25% 10%;
+        --popover-foreground: 252 30% 95%;
+        
+        /* Primary: Brighter Purple in Dark Mode */
+        --primary: 262 80% 65%;
+        --primary-foreground: 230 25% 8%;
+        
+        /* Secondary: Dark Purple-Gray */
+        --secondary: 230 20% 15%;
+        --secondary-foreground: 252 30% 90%;
+        
+        /* Muted: Darker with Purple Undertone */
+        --muted: 230 20% 18%;
+        --muted-foreground: 250 15% 65%;
+        
+        /* Accent: Bright Cyan */
+        --accent: 189 94% 60%;
+        --accent-foreground: 230 25% 8%;
+        
+        --destructive: 348 83% 55%;
+        --destructive-foreground: 0 0% 100%;
+        
+        /* Dark Mode Borders */
+        --border: 230 20% 20%;
+        --input: 230 20% 18%;
+        --ring: 262 80% 65%;
+        
+        /* Dark Mode Charts */
+        --chart-1: 262 80% 65%;
+        --chart-2: 189 94% 60%;
+        --chart-3: 330 81% 65%;
+        --chart-4: 43 96% 60%;
+        --chart-5: 142 71% 50%;
+        
+        /* Dark Sidebar */
+        --sidebar-background: 230 25% 10%;
+        --sidebar-foreground: 252 30% 90%;
+        --sidebar-primary: 262 80% 65%;
+        --sidebar-primary-foreground: 230 25% 8%;
+        --sidebar-accent: 230 20% 15%;
+        --sidebar-accent-foreground: 252 30% 90%;
+        --sidebar-border: 230 20% 20%;
+        --sidebar-ring: 262 80% 65%;
+    }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
+
+@layer components {
+  /* Custom gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(262 83% 65%) 100%);
+  }
+  
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(189 94% 65%) 100%);
+  }
+  
+  .gradient-hero {
+    background: linear-gradient(135deg, 
+      hsl(262 83% 58%) 0%, 
+      hsl(262 80% 65%) 25%, 
+      hsl(189 94% 55%) 75%, 
+      hsl(189 94% 60%) 100%
+    );
+  }
+  
+  .gradient-card {
+    background: linear-gradient(135deg, 
+      hsl(var(--card)) 0%, 
+      hsl(252 30% 98%) 100%
+    );
+  }
+  
+  /* Enhanced shadows */
+  .shadow-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
+  }
+  
+  .shadow-glow-accent {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.15);
+  }
+  
+  /* Glass morphism effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Hover animations */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px hsl(var(--primary) / 0.15);
+  }
+  
+  /* Loading shimmer */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
+@layer utilities {
+  /* Text gradients */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(262 83% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(189 94% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Custom scroll bar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+}
